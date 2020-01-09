@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>webpack使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="webpack使用技巧webpack-dev-server支持两种模式来自动刷新页面.iframe模式(页面放在iframe中,当发生改变时重载)inline模式(将webpack-dev-sever的客户端入口添加到包(bundle)中) 开发仅用于开发环境，请不要在生产环境中使用它们！ 使用 source map 追踪错误当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack使用">
+<meta property="og:url" content="http://yoursite.com/2020/01/09/webpack%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webpack使用技巧webpack-dev-server支持两种模式来自动刷新页面.iframe模式(页面放在iframe中,当发生改变时重载)inline模式(将webpack-dev-sever的客户端入口添加到包(bundle)中) 开发仅用于开发环境，请不要在生产环境中使用它们！ 使用 source map 追踪错误当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-09T02:59:44.630Z">
+<meta property="article:modified_time" content="2019-08-03T13:14:28.385Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webpack使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/09/webpack%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2020-01-09T02:59:44.630Z" itemprop="datePublished">2020-01-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="webpack使用技巧"><a href="#webpack使用技巧" class="headerlink" title="webpack使用技巧"></a>webpack使用技巧</h1><p>webpack-dev-server支持两种模式来自动刷新页面.<br>iframe模式(页面放在iframe中,当发生改变时重载)<br>inline模式(将webpack-dev-sever的客户端入口添加到包(bundle)中)</p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><strong>仅用于开发环境，请不要在生产环境中使用它们！</strong></p>
+<h3 id="使用-source-map-追踪错误"><a href="#使用-source-map-追踪错误" class="headerlink" title="使用 source map 追踪错误"></a>使用 source map 追踪错误</h3><p>当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。<br>在webpack.config.js文件中添加<code>devtool: &#39;inline-source-map&#39;</code></p>
+<h3 id="使用-webpack-dev-server-启动自动编译并刷新浏览器"><a href="#使用-webpack-dev-server-启动自动编译并刷新浏览器" class="headerlink" title="使用 webpack-dev-server 启动自动编译并刷新浏览器"></a>使用 webpack-dev-server 启动自动编译并刷新浏览器</h3><ol>
+<li><code>npm install --save-dev webpack-dev-server</code></li>
+<li>修改配置文件，告诉开发服务器(dev server)，在哪里查找文件<br>在webpack.config.js文件添加<code>devServer: {contentBase: &#39;./dist&#39;}</code><br><br>以上配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件</li>
+<li>在package.json文件中添加npm script脚本：<code>&quot;scripts&quot;:{&quot;start&quot;: &quot;webpack-dev-server --open&quot;}</code></li>
+<li>在命令行中运行 npm start，就会看到浏览器自动加载页面。如果现在修改和保存任意源文件，web 服务器就会自动重新加载编译后的代码。</li>
+</ol>
+<h2 id="模块热替换-HMR"><a href="#模块热替换-HMR" class="headerlink" title="模块热替换(HMR)"></a>模块热替换(HMR)</h2><p>允许在运行时更新各种模块，而无需进行完全刷新</p>
+<p>热模块替换的好处是只替换更新的部分,而不是页面重载</p>
+<p>很多loader使得模块热替换的过程变得更容易。<br><strong>HMR 不适用于生产环境，这意味着它应当只在开发环境使用。</strong><br>启动：更新 webpack-dev-server 的配置，和使用 webpack 内置的 HMR 插件</p>
+<p>在webpack.config.js文件中：</p>
+<ol>
+<li><code>const webpack = require(&#39;webpack&#39;);</code></li>
+<li><code>devServer:{hot: true}</code></li>
+<li><pre><code class="js">plugins:[
+<span class="keyword">new</span> webpack.NamedModulesPlugin() <span class="comment">//作用：更容易查看要修补(patch)的依赖</span>
+<span class="keyword">new</span> webpack.HotModuleReplacementPlugin()]
+&lt;!--￼<span class="number">0</span>--&gt;
+&lt;p&gt;避免在生产中使用 inline-*** 和 <span class="built_in">eval</span>-***，因为它们可以增加 bundle 大小，并降低整体性能。&lt;<span class="regexp">/p&gt;</span>
+<span class="regexp"></span></code></pre>
+</li>
+</ol>
+<h2 id="代码分离"><a href="#代码分离" class="headerlink" title="代码分离"></a>代码分离</h2><p>把代码分离到不同的 bundle 中，然后可以按需加载或并行加载这些文件，代码分离可以用于获取更小的 bundle，以及控制资源加载优先级，如果使用合理，会极大影响加载时间<br>3种代码分离方法：</p>
+<ul>
+<li>入口起点：使用 entry 配置手动地分离代码。</li>
+<li>防止重复：使用 CommonsChunkPlugin 去重和分离 chunk。</li>
+<li>动态导入：通过模块的内联函数调用来分离代码。</li>
+</ul>
+<h1 id="webpack-4个核心概念"><a href="#webpack-4个核心概念" class="headerlink" title="webpack 4个核心概念"></a>webpack 4个核心概念</h1><h2 id="入口-entry"><a href="#入口-entry" class="headerlink" title="入口(entry)"></a>入口(entry)</h2><p>指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始,每个依赖被处理，最后输出到之为 bundles 的文件中</p>
+<p>webpack配置中设置entry属性，来指定一个入口起点（或多个入口起点）。默认值为 ./src。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:<span class="string">'./main.js'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:&#123;</span><br><span class="line">        <span class="string">"main"</span>:<span class="string">"./main.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当只有一个入口时，花括号和’main’可以省略</p>
+<p>向entry传入一个数组时，会创建多个入口</p>
+<h2 id="输出-output"><a href="#输出-output" class="headerlink" title="输出(output)"></a>输出(output)</h2><p>告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，默认值为 ./dist<br>filename 用于输出文件的文件名。<br>目标输出目录 path 的<strong>绝对路径</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Node 内置的 path 模块，并在它前面加上 __dirname这个全局变量。可以防止不同操作系统之间的文件路径问题，并且可以使相对路径按照预期工作。</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>创建了多个单独的 “chunk”(使用多个入口起点或使用像 CommonsChunkPlugin 这样的插件)使用<strong>占位符</strong>来确保每个文件具有唯一的名称</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].js'</span>,</span><br><span class="line">    path: path.resolve(__dirname,<span class="string">'dist'</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。</p>
+<p>在 webpack 的配置中 loader 有两个目标：</p>
+<ol>
+<li>test 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。</li>
+<li>use 属性，表示进行转换时，应该使用哪个 loader。</li>
+</ol>
+<p><strong>在 webpack 配置中定义 loader 时，要定义在 module.rules 中，而不是 rules。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h2><p>插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口功能极其强大，可以用来处理各种各样的任务。插件目的在于解决 loader 无法实现的其他事。</p>
+<p>想要使用一个插件，你只需要 require() 它，然后把它添加到 plugins 数组中。使用 new 操作符来创建它的一个实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h1 id="webpack-其它慨念"><a href="#webpack-其它慨念" class="headerlink" title="webpack 其它慨念"></a>webpack 其它慨念</h1><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>提供 mode 配置选项，告知 webpack 使用相应模式的内置优化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span></span><br><span class="line"><span class="comment">//   mode:'development'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>或从CLI参数中传递：<br><code>webpack --mode=production</code><br><strong>记住，只设置 NODE_ENV，则不会自动设置 mode。</strong></p>
+<h2 id="manifest"><a href="#manifest" class="headerlink" title="manifest"></a>manifest</h2><p>runtime，以及伴随的 manifest 数据，主要是指：在浏览器运行时，webpack 用来连接模块化的应用程序的所有代码。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。</p>
+<p>一旦你的应用程序中，形如 index.html 文件、一些 bundle 和各种资源加载到浏览器中，会发生什么？你精心安排的 /src 目录的文件结构现在已经不存在，所以 webpack 如何管理所有模块之间的交互呢？这就是 manifest 数据用途的由来……当编译器(compiler)开始执行、解析和映射应用程序时，它会保留所有模块的详细要点。这个数据集合称为 “Manifest”，当完成打包并发送到浏览器时，会在运行时通过 Manifest 来解析和加载模块。无论你选择哪种模块语法，那些 import 或 require 语句现在都已经转换为 _<em>webpack_require_</em> 方法，此方法指向模块标识符(module identifier)。通过使用 manifest 中的数据，runtime 将能够查询模块标识符，检索出背后对应的模块。</p>
+<p>通过使用 bundle 计算出内容散列(content hash)作为文件名称，这样在内容或文件修改时，浏览器中将通过新的内容散列指向新的文件，从而使缓存无效。runtime 和 manifest 的注入在每次构建都会发生变化。</p>
+<h2 id="构建目标"><a href="#构建目标" class="headerlink" title="构建目标"></a>构建目标</h2><p>因为服务器和浏览器代码都可以用 JavaScript 编写，所以 webpack 提供了多种构建目标</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  target: <span class="string">'node'</span></span><br><span class="line"><span class="comment">//   使用 node webpack 会编译为用于「类 Node.js」环境</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>多个目标(target)：可以通过打包两份分离的配置来创建同构的库</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> serverConfig = &#123;</span><br><span class="line">  target: <span class="string">'node'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'lib.node.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//…</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clientConfig = &#123;</span><br><span class="line">  target: <span class="string">'web'</span>, <span class="comment">// &lt;=== 默认是 'web'，可省略</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'lib.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//…</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = [ serverConfig, clientConfig ];</span><br></pre></td></tr></table></figure>
+
+<h2 id="模块热替换-hot-module-replacement"><a href="#模块热替换-hot-module-replacement" class="headerlink" title="模块热替换(hot module replacement)"></a>模块热替换(hot module replacement)</h2><p>在应用程序运行过程中替换、添加或删除模块，而无需重新加载整个页面。</p>
+<p>HMR工作原理：</p>
+<ul>
+<li><p>在应用程序中</p>
+<p>在应用程序中置换(swap in and out)模块：</p>
+<ol>
+<li>应用程序代码要求 HMR runtime 检查更新。</li>
+<li>HMR runtime（异步）下载更新，然后通知应用程序代码。</li>
+<li>应用程序代码要求 HMR runtime 应用更新。</li>
+<li>HMR runtime（同步）应用更新。</li>
+</ol>
+<p><em>你可以设置 HMR，以使此进程自动触发更新，或者你可以选择要求在用户交互时进行更新。</em></p>
+</li>
+<li><p>在编译器中</p>
+</li>
+</ul>
+<p>编译器(compiler)需要发出 “update”，以允许更新之前的版本到新的版本。”update” 由两部分组成：</p>
+<ol>
+<li>更新后的 manifest(JSON)</li>
+<li>一个或多个更新后的 chunk (JavaScript)<br>manifest 包括新的编译 hash 和所有的待更新 chunk 目录。每个更新 chunk 都含有对应于此 chunk 的全部更新模块（或一个 flag 用于表明此模块要被移除）的代码。</li>
+</ol>
+<p>译器确保模块 ID 和 chunk ID 在这些构建之间保持一致。通常将这些 ID 存储在内存中（例如，使用 webpack-dev-server 时），但是也可能将它们存储在一个 JSON 文件中。</p>
+<ul>
+<li>在模块中</li>
+</ul>
+<p>HMR 是可选功能，只会影响包含 HMR 代码的模块。</p>
+<ul>
+<li>在HMR Runtime中<br>对于模块系统的 runtime，附加的代码被发送到 parents 和 children 跟踪模块。在管理方面，runtime 支持两个方法 check 和 apply。</li>
+</ul>
+<p>check 发送 HTTP 请求来更新 manifest。如果请求失败，说明没有可用更新。如果请求成功，待更新 chunk 会和当前加载过的 chunk 进行比较。对每个加载过的 chunk，会下载相对应的待更新 chunk。当所有待更新 chunk 完成下载，就会准备切换到 ready 状态。</p>
+<p>apply 方法将所有被更新模块标记为无效。对于每个无效模块，都需要在模块中有一个更新处理函数(update handler)，或者在它的父级模块们中有更新处理函数。否则，无效标记冒泡，并也使父级无效。每个冒泡继续，直到到达应用程序入口起点，或者到达带有更新处理函数的模块（以最先到达为准，冒泡停止）。如果它从入口起点开始冒泡，则此过程失败。</p>
+<p>之后，所有无效模块都被（通过 dispose 处理函数）处理和解除加载。然后更新当前 hash，并且调用所有 “accept” 处理函数。runtime 切换回闲置状态(idle state)，一切照常继续。</p>
+<p><a href="https://segmentfault.com/a/1190000010426778" target="_blank" rel="noopener">exports、module.exports和export、export default的区别</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/09/webpack%E4%BD%BF%E7%94%A8/" data-id="ck565qc0e0004e4tue186bklt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/09/Webstorage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Webstorage
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/09/Vue%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue知识点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/09/Webstorage/">Webstorage</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/09/webpack%E4%BD%BF%E7%94%A8/">webpack使用</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/09/Vue%E7%9F%A5%E8%AF%86%E7%82%B9/">Vue知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/09/VueRouter/">VueRouter</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/09/beatifulsoup/">beatifulsoup</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -5,13 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>Vue知识点 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="[TOC] Vue基础知识引入&lt;script src&#x3D;&quot;vue.js&quot;&gt;&lt;&#x2F;script&gt;将其放置&lt;\body&gt;以上  ## 创建实例 语法：&#96;var vm &#x3D; new Vue({....})&#96;  ### 选项 &#x2F; DOM API + el   + 类型：string | Element   + 限制：只在由 new 创建的实例中遵守。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue知识点">
+<meta property="og:url" content="http://yoursite.com/2020/01/09/Vue%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] Vue基础知识引入&lt;script src&#x3D;&quot;vue.js&quot;&gt;&lt;&#x2F;script&gt;将其放置&lt;\body&gt;以上  ## 创建实例 语法：&#96;var vm &#x3D; new Vue({....})&#96;  ### 选项 &#x2F; DOM API + el   + 类型：string | Element   + 限制：只在由 new 创建的实例中遵守。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-09T02:59:44.614Z">
+<meta property="article:modified_time" content="2020-01-09T03:13:22.392Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,202 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Webstorage" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/09/Webstorage/" class="article-date">
-  <time datetime="2020-01-09T02:59:44.646Z" itemprop="datePublished">2020-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/Webstorage/">Webstorage</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Webstorage"><a href="#Webstorage" class="headerlink" title="Webstorage"></a>Webstorage</h1><p>包含2种机制：</p>
-<ol>
-<li><code>sessionStorage</code> 为每一个给定的源（given origin）维持一个独立的存储区域，该存储区域在页面会话期间可用（即只要浏览器处于打开状态，包括页面重新加载和恢复）</li>
-<li><code>localStorage</code> 同样的功能，但是在浏览器关闭，然后重新打开后数据仍然存在。</li>
-</ol>
-<p><em>这两种机制是通过 Window.sessionStorage 和 Window.localStorage 属性使用（更确切的说，在支持的浏览器中 Window 对象实现了 WindowLocalStorage 和 WindowSessionStorage 对象并挂在其 localStorage 和 sessionStorage 属性下）—— 调用其中任一对象会创建 Storage 对象，通过 Storage 对象，可以设置、获取和移除数据项。对于每个源（origin）sessionStorage 和 localStorage 使用不同的 Storage 对象——独立运行和控制。</em></p>
-<h2 id="Web-Storage-接口"><a href="#Web-Storage-接口" class="headerlink" title="Web Storage 接口"></a>Web Storage 接口</h2><ul>
-<li><code>Storage</code>:允许你在一个特定域中设置，检索和删除数据和储存类型(session or local.)</li>
-<li><code>Window</code>:Web Storage API 继承于Window 对象,并提供两个新属性  — Window.sessionStorage 和 Window.localStorage — 它们分别地提供对当前域的会话和本地Storage 对象的访问。</li>
-<li><code>StorageEvent</code>:当一个存储区更改时，存储事件从文档的 Window 对象上被发布。</li>
-</ul>
-<h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p>Storage 提供了访问特定域名下的会话存储或本地存储的功能，例如，可以添加、修改或删除存储的数据项</p>
-<p>如果你想要操作一个域名的会话存储，可以使用 Window.sessionStorage；如果想要操作一个域名的本地存储，可以使用 Window.localStorage</p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
-<li><code>Storage.length</code>(只读):返回一个整数，表示存储在 Storage 对象中的数据项数量</li>
-</ul>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
-<li><code>Storage.key()</code>:该方法接受一个数值 n 作为参数，并返回存储中的第 n 个键名</li>
-<li><code>Storage.getItem()</code>:该方法接受一个键名作为参数，返回键名对应的值</li>
-<li><code>Storage.setItem()</code>:该方法接受一个键名和值作为参数，将会把键值对添加到存储中，如果键名存在，则更新其对应的值。</li>
-<li><code>Storage.removeItem()</code>:该方法接受一个键名作为参数，并把该键名从存储中删除。</li>
-<li><code>Storage.clear()</code>:调用该方法会清空存储中的所有键名</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/09/Webstorage/" data-id="ck565qbzd0001e4tuh7ejb8z9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-webpack使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/09/webpack%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2020-01-09T02:59:44.630Z" itemprop="datePublished">2020-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/webpack%E4%BD%BF%E7%94%A8/">webpack使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="webpack使用技巧"><a href="#webpack使用技巧" class="headerlink" title="webpack使用技巧"></a>webpack使用技巧</h1><p>webpack-dev-server支持两种模式来自动刷新页面.<br>iframe模式(页面放在iframe中,当发生改变时重载)<br>inline模式(将webpack-dev-sever的客户端入口添加到包(bundle)中)</p>
-<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p><strong>仅用于开发环境，请不要在生产环境中使用它们！</strong></p>
-<h3 id="使用-source-map-追踪错误"><a href="#使用-source-map-追踪错误" class="headerlink" title="使用 source map 追踪错误"></a>使用 source map 追踪错误</h3><p>当 webpack 打包源代码时，可能会很难追踪到错误和警告在源代码中的原始位置。<br>在webpack.config.js文件中添加<code>devtool: &#39;inline-source-map&#39;</code></p>
-<h3 id="使用-webpack-dev-server-启动自动编译并刷新浏览器"><a href="#使用-webpack-dev-server-启动自动编译并刷新浏览器" class="headerlink" title="使用 webpack-dev-server 启动自动编译并刷新浏览器"></a>使用 webpack-dev-server 启动自动编译并刷新浏览器</h3><ol>
-<li><code>npm install --save-dev webpack-dev-server</code></li>
-<li>修改配置文件，告诉开发服务器(dev server)，在哪里查找文件<br>在webpack.config.js文件添加<code>devServer: {contentBase: &#39;./dist&#39;}</code><br><br>以上配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件</li>
-<li>在package.json文件中添加npm script脚本：<code>&quot;scripts&quot;:{&quot;start&quot;: &quot;webpack-dev-server --open&quot;}</code></li>
-<li>在命令行中运行 npm start，就会看到浏览器自动加载页面。如果现在修改和保存任意源文件，web 服务器就会自动重新加载编译后的代码。</li>
-</ol>
-<h2 id="模块热替换-HMR"><a href="#模块热替换-HMR" class="headerlink" title="模块热替换(HMR)"></a>模块热替换(HMR)</h2><p>允许在运行时更新各种模块，而无需进行完全刷新</p>
-<p>热模块替换的好处是只替换更新的部分,而不是页面重载</p>
-<p>很多loader使得模块热替换的过程变得更容易。<br><strong>HMR 不适用于生产环境，这意味着它应当只在开发环境使用。</strong><br>启动：更新 webpack-dev-server 的配置，和使用 webpack 内置的 HMR 插件</p>
-<p>在webpack.config.js文件中：</p>
-<ol>
-<li><code>const webpack = require(&#39;webpack&#39;);</code></li>
-<li><code>devServer:{hot: true}</code></li>
-<li><pre><code class="js">plugins:[
-<span class="keyword">new</span> webpack.NamedModulesPlugin() <span class="comment">//作用：更容易查看要修补(patch)的依赖</span>
-<span class="keyword">new</span> webpack.HotModuleReplacementPlugin()]
-&lt;!--￼<span class="number">0</span>--&gt;
-&lt;p&gt;避免在生产中使用 inline-*** 和 <span class="built_in">eval</span>-***，因为它们可以增加 bundle 大小，并降低整体性能。&lt;<span class="regexp">/p&gt;</span>
-<span class="regexp"></span></code></pre>
-</li>
-</ol>
-<h2 id="代码分离"><a href="#代码分离" class="headerlink" title="代码分离"></a>代码分离</h2><p>把代码分离到不同的 bundle 中，然后可以按需加载或并行加载这些文件，代码分离可以用于获取更小的 bundle，以及控制资源加载优先级，如果使用合理，会极大影响加载时间<br>3种代码分离方法：</p>
-<ul>
-<li>入口起点：使用 entry 配置手动地分离代码。</li>
-<li>防止重复：使用 CommonsChunkPlugin 去重和分离 chunk。</li>
-<li>动态导入：通过模块的内联函数调用来分离代码。</li>
-</ul>
-<h1 id="webpack-4个核心概念"><a href="#webpack-4个核心概念" class="headerlink" title="webpack 4个核心概念"></a>webpack 4个核心概念</h1><h2 id="入口-entry"><a href="#入口-entry" class="headerlink" title="入口(entry)"></a>入口(entry)</h2><p>指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始,每个依赖被处理，最后输出到之为 bundles 的文件中</p>
-<p>webpack配置中设置entry属性，来指定一个入口起点（或多个入口起点）。默认值为 ./src。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:<span class="string">'./main.js'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:&#123;</span><br><span class="line">        <span class="string">"main"</span>:<span class="string">"./main.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当只有一个入口时，花括号和’main’可以省略</p>
-<p>向entry传入一个数组时，会创建多个入口</p>
-<h2 id="输出-output"><a href="#输出-output" class="headerlink" title="输出(output)"></a>输出(output)</h2><p>告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件，默认值为 ./dist<br>filename 用于输出文件的文件名。<br>目标输出目录 path 的<strong>绝对路径</strong>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Node 内置的 path 模块，并在它前面加上 __dirname这个全局变量。可以防止不同操作系统之间的文件路径问题，并且可以使相对路径按照预期工作。</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>创建了多个单独的 “chunk”(使用多个入口起点或使用像 CommonsChunkPlugin 这样的插件)使用<strong>占位符</strong>来确保每个文件具有唯一的名称</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].js'</span>,</span><br><span class="line">    path: path.resolve(__dirname,<span class="string">'dist'</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）。loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块，然后你就可以利用 webpack 的打包能力，对它们进行处理。</p>
-<p>在 webpack 的配置中 loader 有两个目标：</p>
-<ol>
-<li>test 属性，用于标识出应该被对应的 loader 进行转换的某个或某些文件。</li>
-<li>use 属性，表示进行转换时，应该使用哪个 loader。</li>
-</ol>
-<p><strong>在 webpack 配置中定义 loader 时，要定义在 module.rules 中，而不是 rules。</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h2><p>插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。插件接口功能极其强大，可以用来处理各种各样的任务。插件目的在于解决 loader 无法实现的其他事。</p>
-<p>想要使用一个插件，你只需要 require() 它，然后把它添加到 plugins 数组中。使用 new 操作符来创建它的一个实例</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h1 id="webpack-其它慨念"><a href="#webpack-其它慨念" class="headerlink" title="webpack 其它慨念"></a>webpack 其它慨念</h1><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>提供 mode 配置选项，告知 webpack 使用相应模式的内置优化。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">'production'</span></span><br><span class="line"><span class="comment">//   mode:'development'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>或从CLI参数中传递：<br><code>webpack --mode=production</code><br><strong>记住，只设置 NODE_ENV，则不会自动设置 mode。</strong></p>
-<h2 id="manifest"><a href="#manifest" class="headerlink" title="manifest"></a>manifest</h2><p>runtime，以及伴随的 manifest 数据，主要是指：在浏览器运行时，webpack 用来连接模块化的应用程序的所有代码。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。</p>
-<p>一旦你的应用程序中，形如 index.html 文件、一些 bundle 和各种资源加载到浏览器中，会发生什么？你精心安排的 /src 目录的文件结构现在已经不存在，所以 webpack 如何管理所有模块之间的交互呢？这就是 manifest 数据用途的由来……当编译器(compiler)开始执行、解析和映射应用程序时，它会保留所有模块的详细要点。这个数据集合称为 “Manifest”，当完成打包并发送到浏览器时，会在运行时通过 Manifest 来解析和加载模块。无论你选择哪种模块语法，那些 import 或 require 语句现在都已经转换为 _<em>webpack_require_</em> 方法，此方法指向模块标识符(module identifier)。通过使用 manifest 中的数据，runtime 将能够查询模块标识符，检索出背后对应的模块。</p>
-<p>通过使用 bundle 计算出内容散列(content hash)作为文件名称，这样在内容或文件修改时，浏览器中将通过新的内容散列指向新的文件，从而使缓存无效。runtime 和 manifest 的注入在每次构建都会发生变化。</p>
-<h2 id="构建目标"><a href="#构建目标" class="headerlink" title="构建目标"></a>构建目标</h2><p>因为服务器和浏览器代码都可以用 JavaScript 编写，所以 webpack 提供了多种构建目标</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  target: <span class="string">'node'</span></span><br><span class="line"><span class="comment">//   使用 node webpack 会编译为用于「类 Node.js」环境</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>多个目标(target)：可以通过打包两份分离的配置来创建同构的库</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> serverConfig = &#123;</span><br><span class="line">  target: <span class="string">'node'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'lib.node.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//…</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clientConfig = &#123;</span><br><span class="line">  target: <span class="string">'web'</span>, <span class="comment">// &lt;=== 默认是 'web'，可省略</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'lib.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//…</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = [ serverConfig, clientConfig ];</span><br></pre></td></tr></table></figure>
-
-<h2 id="模块热替换-hot-module-replacement"><a href="#模块热替换-hot-module-replacement" class="headerlink" title="模块热替换(hot module replacement)"></a>模块热替换(hot module replacement)</h2><p>在应用程序运行过程中替换、添加或删除模块，而无需重新加载整个页面。</p>
-<p>HMR工作原理：</p>
-<ul>
-<li><p>在应用程序中</p>
-<p>在应用程序中置换(swap in and out)模块：</p>
-<ol>
-<li>应用程序代码要求 HMR runtime 检查更新。</li>
-<li>HMR runtime（异步）下载更新，然后通知应用程序代码。</li>
-<li>应用程序代码要求 HMR runtime 应用更新。</li>
-<li>HMR runtime（同步）应用更新。</li>
-</ol>
-<p><em>你可以设置 HMR，以使此进程自动触发更新，或者你可以选择要求在用户交互时进行更新。</em></p>
-</li>
-<li><p>在编译器中</p>
-</li>
-</ul>
-<p>编译器(compiler)需要发出 “update”，以允许更新之前的版本到新的版本。”update” 由两部分组成：</p>
-<ol>
-<li>更新后的 manifest(JSON)</li>
-<li>一个或多个更新后的 chunk (JavaScript)<br>manifest 包括新的编译 hash 和所有的待更新 chunk 目录。每个更新 chunk 都含有对应于此 chunk 的全部更新模块（或一个 flag 用于表明此模块要被移除）的代码。</li>
-</ol>
-<p>译器确保模块 ID 和 chunk ID 在这些构建之间保持一致。通常将这些 ID 存储在内存中（例如，使用 webpack-dev-server 时），但是也可能将它们存储在一个 JSON 文件中。</p>
-<ul>
-<li>在模块中</li>
-</ul>
-<p>HMR 是可选功能，只会影响包含 HMR 代码的模块。</p>
-<ul>
-<li>在HMR Runtime中<br>对于模块系统的 runtime，附加的代码被发送到 parents 和 children 跟踪模块。在管理方面，runtime 支持两个方法 check 和 apply。</li>
-</ul>
-<p>check 发送 HTTP 请求来更新 manifest。如果请求失败，说明没有可用更新。如果请求成功，待更新 chunk 会和当前加载过的 chunk 进行比较。对每个加载过的 chunk，会下载相对应的待更新 chunk。当所有待更新 chunk 完成下载，就会准备切换到 ready 状态。</p>
-<p>apply 方法将所有被更新模块标记为无效。对于每个无效模块，都需要在模块中有一个更新处理函数(update handler)，或者在它的父级模块们中有更新处理函数。否则，无效标记冒泡，并也使父级无效。每个冒泡继续，直到到达应用程序入口起点，或者到达带有更新处理函数的模块（以最先到达为准，冒泡停止）。如果它从入口起点开始冒泡，则此过程失败。</p>
-<p>之后，所有无效模块都被（通过 dispose 处理函数）处理和解除加载。然后更新当前 hash，并且调用所有 “accept” 处理函数。runtime 切换回闲置状态(idle state)，一切照常继续。</p>
-<p><a href="https://segmentfault.com/a/1190000010426778" target="_blank" rel="noopener">exports、module.exports和export、export default的区别</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/09/webpack%E4%BD%BF%E7%94%A8/" data-id="ck565qc0e0004e4tue186bklt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue知识点" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Vue知识点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/01/09/Vue%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-date">
   <time datetime="2020-01-09T02:59:44.614Z" itemprop="datePublished">2020-01-09</time>
@@ -270,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/Vue%E7%9F%A5%E8%AF%86%E7%82%B9/">Vue知识点</a>
+    <h1 class="article-title" itemprop="name">
+      Vue知识点
     </h1>
   
 
@@ -814,297 +623,28 @@ computed:<figure class="highlight js"><table><tr><td class="gutter"><pre><span c
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-VueRouter" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/09/VueRouter/" class="article-date">
-  <time datetime="2020-01-09T02:59:44.552Z" itemprop="datePublished">2020-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2020/01/09/webpack%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/VueRouter/">VueRouter</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h1><p>安装：<code>npm install vue-router</code></p>
-<p>导入：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line">Vue.user(VueRouter)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/09/VueRouter/" data-id="ck565qbye0000e4tu7dsj7152" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-beatifulsoup" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/09/beatifulsoup/" class="article-date">
-  <time datetime="2020-01-09T02:59:44.474Z" itemprop="datePublished">2020-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          webpack使用
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/beatifulsoup/">beatifulsoup</a>
-    </h1>
   
+    <a href="/2020/01/09/VueRouter/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">VueRouter</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="BeatifulSoup"><a href="#BeatifulSoup" class="headerlink" title="BeatifulSoup"></a>BeatifulSoup</h1><h2 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(<span class="string">"&lt;html&gt;data&lt;/html&gt;"</span>,<span class="string">'lxml'</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象种类"><a href="#对象种类" class="headerlink" title="对象种类"></a>对象种类</h2><p>所有对象可以归纳为4种: Tag , NavigableString , BeautifulSoup , Comment。</p>
-<h3 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h3><p>属性：</p>
-<ol>
-<li>name：获取tag的名字</li>
-<li>attrs：tag的属性的操作方法与字典相同<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tag[<span class="string">'class'</span>] || tag.attrs</span><br></pre></td></tr></table></figure></li>
-<li>多值属性：最常见的多值的属性是 class ，多值属性的返回类型是list<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">css_soup = BeautifulSoup(<span class="string">'&lt;p class="body strikeout"&gt;&lt;/p&gt;'</span>)</span><br><span class="line">css_soup.p[<span class="string">'class'</span>]</span><br><span class="line"><span class="comment"># ["body", "strikeout"]</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h3 id="NavigableString"><a href="#NavigableString" class="headerlink" title="NavigableString"></a>NavigableString</h3><p>可以遍历的字符串：字符串常被包含在tag内.Beautiful Soup用 NavigableString 类来包装tag中的字符串</p>
-<h3 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h3><p>BeautifulSoup 对象表示的是一个文档的全部内容.大部分时候,可以把它当作 Tag 对象</p>
-<h3 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h3><p>Comment 对象是一个特殊类型的 NavigableString 对象</p>
-<h2 id="遍历文档树"><a href="#遍历文档树" class="headerlink" title="遍历文档树"></a>遍历文档树</h2><h3 id="tag的名字"><a href="#tag的名字" class="headerlink" title="tag的名字"></a>tag的名字</h3><p>如果想获取 &lt;head&gt; 标签,只要用 soup.head</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.head</span><br><span class="line"><span class="comment"># &lt;head&gt;&lt;title&gt;The Dormouse's story&lt;/title&gt;&lt;/head&gt;</span></span><br></pre></td></tr></table></figure>
-<p>通过点取属性的方式只能获得当前名字的第一个tag</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">soup.a</span><br><span class="line"><span class="comment"># &lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#获取所有的&lt;a&gt;标签</span></span><br><span class="line">soup.find_all(<span class="string">'a'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br></pre></td></tr></table></figure>
-<h3 id="contents和-children"><a href="#contents和-children" class="headerlink" title=".contents和.children"></a>.contents和.children</h3><p>tag的 .contents 属性可以将tag的子节点以列表的方式输出<br>通过tag的 .children 生成器,可以对tag的子节点进行循环</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> title_tag.children:</span><br><span class="line">    print(child)</span><br><span class="line">    <span class="comment"># The Dormouse's story</span></span><br></pre></td></tr></table></figure>
-<p>.contents 和 .children 属性仅包含tag的直接子节点</p>
-<h3 id="descendants"><a href="#descendants" class="headerlink" title=".descendants"></a>.descendants</h3><p>.descendants 属性可以对所有tag的子孙节点进行递归循环</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> head_tag.descendants:</span><br><span class="line">    print(child)</span><br><span class="line">    <span class="comment"># &lt;title&gt;The Dormouse's story&lt;/title&gt;</span></span><br><span class="line">    <span class="comment"># The Dormouse's story</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="strings-和-stripped-strings"><a href="#strings-和-stripped-strings" class="headerlink" title=".strings 和 stripped_strings"></a>.strings 和 stripped_strings</h3><p>如果tag中包含多个字符串 ,可以使用 .strings 来循环获取</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> string <span class="keyword">in</span> soup.strings:</span><br><span class="line">    print(repr(string))</span><br></pre></td></tr></table></figure>
-<p>输出的字符串中可能包含了很多空格或空行,使用 .stripped_strings 可以去除多余空白内容</p>
-<h3 id="parent-和-parents"><a href="#parent-和-parents" class="headerlink" title=".parent 和 .parents"></a>.parent 和 .parents</h3><p>通过 .parent 属性来获取某个元素的父节点</p>
-<p>通过元素的 .parents 属性可以递归得到元素的所有父辈节点</p>
-<h3 id="next-sibling-和-previous-sibling-和-next-siblings-和-previous-siblings"><a href="#next-sibling-和-previous-sibling-和-next-siblings-和-previous-siblings" class="headerlink" title=".next_sibling 和 .previous_sibling 和 .next_siblings 和 .previous_siblings"></a>.next_sibling 和 .previous_sibling 和 .next_siblings 和 .previous_siblings</h3><p>在文档树中,使用 .next_sibling 和 .previous_sibling 属性来查询兄弟节点</p>
-<p>通过 .next_siblings 和 .previous_siblings 属性可以对当前节点的兄弟节点迭代输出</p>
-<h3 id="next-element-和-previous-element-和-next-elements-和-previous-elements"><a href="#next-element-和-previous-element-和-next-elements-和-previous-elements" class="headerlink" title=".next_element 和 .previous_element 和 .next_elements 和 .previous_elements"></a>.next_element 和 .previous_element 和 .next_elements 和 .previous_elements</h3><p>.next_element 属性指向解析过程中下一个被解析的对象(字符串或tag),结果可能与 .next_sibling 相同,但通常是不一样的.（.next_sibling返回兄弟节点，.next_element可能放回子节点）</p>
-<p>通过 .next_elements 和 .previous_elements 的迭代器就可以向前或向后访问文档的解析内容,就好像文档正在被解析一样</p>
-<h2 id="搜索文档树"><a href="#搜索文档树" class="headerlink" title="搜索文档树"></a>搜索文档树</h2><h3 id="find-all"><a href="#find-all" class="headerlink" title="find_all()"></a>find_all()</h3><p><code>find_all( name , attrs , recursive , text , **kwargs )</code><br>返回一个列表</p>
-<p>过滤器（参数类型）：</p>
-<ol>
-<li>字符串：Beautiful Soup会查找与字符串完整匹配的内容</li>
-<li>正则表达式：Beautiful Soup会通过正则表达式的 match() 来匹配内容<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">for</span> tag <span class="keyword">in</span> soup.find_all(re.compile(<span class="string">"^b"</span>)):</span><br><span class="line">    print(tag.name)</span><br><span class="line"><span class="comment"># body</span></span><br><span class="line"><span class="comment"># b</span></span><br></pre></td></tr></table></figure></li>
-<li>列表：Beautiful Soup会将与列表中任一元素匹配的内容返回</li>
-<li>True：True 可以匹配任何值,下面代码查找到所有的tag,但是不会返回字符串节点</li>
-<li>方法：可以定义一个方法,方法只接受一个元素参数,如果这个方法返回 True 表示当前元素匹配并且被找到,如果不是则返回 False<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">has_class_but_no_id</span><span class="params">(tag)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> tag.has_attr(<span class="string">'class'</span>) <span class="keyword">and</span> <span class="keyword">not</span> tag.has_attr(<span class="string">'id'</span>)</span><br><span class="line"></span><br><span class="line">soup.find_all(has_class_but_no_id)</span><br><span class="line"><span class="comment"># [&lt;p class="title"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;p class="story"&gt;Once upon a time there were...&lt;/p&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;p class="story"&gt;...&lt;/p&gt;]</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="name-参数"><a href="#name-参数" class="headerlink" title="name 参数"></a>name 参数</h4><p>name 参数可以查找所有名字为 name 的tag,字符串对象会被自动忽略掉</p>
-<p>搜索 name 参数的值可以使任一类型的 过滤器 ,字符窜,正则表达式,列表,方法或是 True</p>
-<h4 id="keyword-参数"><a href="#keyword-参数" class="headerlink" title="keyword 参数"></a>keyword 参数</h4><p>如果一个指定名字的参数不是搜索内置的参数名,搜索时会把该参数当作指定名字tag的属性来搜索</p>
-<p>搜索指定名字的属性时可以使用的参数值包括 字符串 , 正则表达式 , 列表, True</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(id=<span class="string">'link2'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.find_all(href=re.compile(<span class="string">"elsie"</span>))</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;]</span></span><br></pre></td></tr></table></figure>
-
-<p>可以通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data_soup.find_all(attrs=&#123;<span class="string">"data-foo"</span>: <span class="string">"value"</span>&#125;)</span><br><span class="line"><span class="comment"># [&lt;div data-foo="value"&gt;foo!&lt;/div&gt;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="按-CSS-搜索"><a href="#按-CSS-搜索" class="headerlink" title="按 CSS 搜索"></a>按 CSS 搜索</h4><p>可以通过 class_ 参数搜索有指定CSS类名的tag</p>
-<p>class_ 参数同样接受不同类型的 过滤器 ,字符串,正则表达式,方法或 True</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">"a"</span>, class_=<span class="string">"sister"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.find_all(class_=re.compile(<span class="string">"itl"</span>))</span><br><span class="line"><span class="comment"># [&lt;p class="title"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="text-参数"><a href="#text-参数" class="headerlink" title="text 参数"></a>text 参数</h4><p>通过 text 参数可以搜搜文档中的字符串内容.与 name 参数的可选值一样, text 参数接受 字符串 , 正则表达式 , 列表, True</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(text=<span class="string">"Elsie"</span>)</span><br><span class="line"><span class="comment"># [u'Elsie']</span></span><br><span class="line"></span><br><span class="line">soup.find_all(text=re.compile(<span class="string">"Dormouse"</span>))</span><br><span class="line">[<span class="string">u"The Dormouse's story"</span>, <span class="string">u"The Dormouse's story"</span>]</span><br></pre></td></tr></table></figure>
-<p>虽然 text 参数用于搜索字符串,还可以与其它参数混合使用来过滤tag.Beautiful Soup会找到 .string 方法与 text 参数值相符的tag</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">"a"</span>, text=<span class="string">"Elsie"</span>)</span><br><span class="line"><span class="comment"># [&lt;a href="http://example.com/elsie" class="sister" id="link1"&gt;Elsie&lt;/a&gt;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="limit-参数"><a href="#limit-参数" class="headerlink" title="limit 参数"></a>limit 参数</h4><p>可以使用 limit 参数限制返回结果的数量.效果与SQL中的limit关键字类似,当搜索到的结果数量达到 limit 的限制时,就停止搜索返回结果</p>
-<h4 id="recursive-参数"><a href="#recursive-参数" class="headerlink" title="recursive 参数"></a>recursive 参数</h4><p>调用tag的 find_all() 方法时,Beautiful Soup会检索当前tag的所有子孙节点,如果只想搜索tag的直接子节点,可以使用参数 recursive=False</p>
-<h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">"a"</span>)</span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">soup(<span class="string">"a"</span>)</span><br><span class="line"></span><br><span class="line">soup.title.find_all(text=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 等价于</span></span><br><span class="line">soup.title(text=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><p><code>find( name , attrs , recursive , text , **kwargs )</code><br>直接返回结果</p>
-<h3 id="find-parents-和-find-parent"><a href="#find-parents-和-find-parent" class="headerlink" title="find_parents() 和 find_parent()"></a>find_parents() 和 find_parent()</h3><p>搜索参数与 find_all() 相同的<br>find_parents() 和 find_parent() 用来搜索当前节点的父辈节点,搜索方法与普通tag的搜索方法相同</p>
-<p>find_parent() 和 find_parents() 方法会让人联想到 .parent 和 .parents 属性.它们之间的联系非常紧密.搜索父辈节点的方法实际上就是对 .parents 属性的迭代搜索.</p>
-<h3 id="find-next-siblings-和-find-next-sibling-和-find-previous-siblings-和-find-previous-sibling"><a href="#find-next-siblings-和-find-next-sibling-和-find-previous-siblings-和-find-previous-sibling" class="headerlink" title="find_next_siblings() 和 find_next_sibling() 和 find_previous_siblings() 和 find_previous_sibling()"></a>find_next_siblings() 和 find_next_sibling() 和 find_previous_siblings() 和 find_previous_sibling()</h3><p>这2个方法通过 .next_siblings 属性对当tag的所有后面解析的兄弟tag节点进行迭代, find_next_siblings() 方法返回所有符合条件的后面的兄弟节点, find_next_sibling() 只返回符合条件的后面的第一个tag节点</p>
-<p>这2个方法通过 .previous_siblings 属性对当前tag的前面解析的兄弟tag节点进行迭代, find_previous_siblings() 方法返回所有符合条件的前面的兄弟节点, find_previous_sibling() 方法返回第一个符合条件的前面的兄弟节点:</p>
-<h3 id="find-all-next-和-find-next-和-find-all-previous-和-find-previous"><a href="#find-all-next-和-find-next-和-find-all-previous-和-find-previous" class="headerlink" title="find_all_next() 和 find_next() 和 find_all_previous() 和 find_previous()"></a>find_all_next() 和 find_next() 和 find_all_previous() 和 find_previous()</h3><p>这2个方法通过 .next_elements 属性对当前tag的之后的tag和字符串进行迭代, find_all_next() 方法返回所有符合条件的节点, find_next() 方法返回第一个符合条件的节点</p>
-<p>这2个方法通过 .previous_elements 属性对当前节点前面的tag和字符串进行迭代, find_all_previous() 方法返回所有符合条件的节点, find_previous() 方法返回第一个符合条件的节点.</p>
-<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><p>在 Tag 或 BeautifulSoup 对象的 .select() 方法中传入字符串参数,即可使用CSS选择器的语法找到tag</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">soup.select(<span class="string">"title"</span>)</span><br><span class="line"><span class="comment"># [&lt;title&gt;The Dormouse's story&lt;/title&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.select(<span class="string">"p nth-of-type(3)"</span>)</span><br><span class="line"><span class="comment"># [&lt;p class="story"&gt;...&lt;/p&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过tag标签逐层查找</span></span><br><span class="line">soup.select(<span class="string">"body a"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie"  id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.select(<span class="string">"head &gt; title"</span>)</span><br><span class="line"><span class="comment"># [&lt;title&gt;The Dormouse's story&lt;/title&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到兄弟节点标签</span></span><br><span class="line">soup.select(<span class="string">"#link1 ~ .sister"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie"  id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.select(<span class="string">"#link1 + .sister"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过CSS的类名查找</span></span><br><span class="line">soup.select(<span class="string">".sister"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过tag的id查找</span></span><br><span class="line">soup.select(<span class="string">"#link1"</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过是否存在某个属性来查找</span></span><br><span class="line">soup.select(<span class="string">'a[href]'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过属性的值来查找</span></span><br><span class="line">soup.select(<span class="string">'a[href="http://example.com/elsie"]'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.select(<span class="string">'a[href^="http://example.com/"]'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.select(<span class="string">'a[href$="tillie"]'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/09/beatifulsoup/" data-id="ck565qc050002e4tudobh93e6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-tetris" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/07/tetris/" class="article-date">
-  <time datetime="2020-01-07T09:07:48.000Z" itemprop="datePublished">2020-01-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/07/tetris/">纯JavaScript实现俄罗斯方块小游戏</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="实现步骤："><a href="#实现步骤：" class="headerlink" title="实现步骤："></a>实现步骤：</h2><h3 id="游戏基本参数设置："><a href="#游戏基本参数设置：" class="headerlink" title="游戏基本参数设置："></a>游戏基本参数设置：</h3><ol>
-<li>为游戏区域、方块大小、游戏布局设置基本参数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本的参数设置</span></span><br><span class="line"><span class="keyword">var</span> row =<span class="number">18</span>; <span class="comment">// 行数</span></span><br><span class="line"><span class="keyword">var</span> col = <span class="number">10</span>;<span class="comment">// 列数</span></span><br><span class="line"><span class="keyword">var</span> announcement = <span class="number">6</span>;<span class="comment">// 预告中的列数</span></span><br><span class="line"><span class="keyword">var</span> size = <span class="number">20</span>;<span class="comment">// 方块边的长度</span></span><br><span class="line"><span class="keyword">var</span> isOver = <span class="literal">false</span>;<span class="comment">//判断游戏结束的标志</span></span><br></pre></td></tr></table></figure></li>
-<li>制作俄罗斯方块的7个模型<br>以左上角为坐标轴原点，建立直角坐标系，每个模型都由4个方块组成，记录每个方块左上角的坐标，例如“0,1,1,1,2,1,3,1;”表示左上角坐标为(0,1)、(1,1)、(2,1)、(3,1)的4个方块，单号代表top值，双号代表left值</li>
-</ol>
-<p>将7个模型保存到shapes数组中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> shapes = (<span class="string">"0,1,1,1,2,1,3,1;1,0,1,1,1,2,2,2;2,0,2,1,2,2,1,2;0,1,1,1,1,2,2,2;1,2,2,2,2,1,3,1;1,1,2,1,1,2,2,2;0,2,1,2,1,1,2,2"</span>).split(<span class="string">";"</span>);</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>创建方块函数<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createElm</span>(<span class="params">tag,css</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 创建元素，并传递CSS，添加到body中  返回值：元素</span></span><br><span class="line">    <span class="keyword">var</span> elm = <span class="built_in">document</span>.createElement(tag);</span><br><span class="line">    elm.className = css;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(elm);</span><br><span class="line">    <span class="keyword">return</span> elm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>编写一个Tetris类来记录模型的属性和方法</li>
-</ol>
-<ul>
-<li><p>创建4个方块组成一个模型 divs</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建4个div用来组合出各种方块</span></span><br><span class="line"><span class="keyword">var</span> myCss = css?css:<span class="string">"c"</span>;</span><br><span class="line"><span class="keyword">this</span>.divs = [createElm(<span class="string">"div"</span>,myCss),createElm(<span class="string">"div"</span>,myCss),createElm(<span class="string">"div"</span>,myCss),createElm(<span class="string">"div"</span>,myCss)]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化预告区域的方块 divs2 和分数 score</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有shape说明没有是第一次创建</span></span><br><span class="line">    <span class="keyword">if</span>(!shape)&#123;</span><br><span class="line">        <span class="comment">// 预告区域的方块</span></span><br><span class="line">        <span class="keyword">this</span>.divs2 = [createElm(<span class="string">"div"</span>,myCss),createElm(<span class="string">"div"</span>,myCss),createElm(<span class="string">"div"</span>,myCss),createElm(<span class="string">"div"</span>,myCss)]</span><br><span class="line">        <span class="comment">// 分数区域</span></span><br><span class="line">        <span class="keyword">this</span>.score = createElm(<span class="string">"div"</span>,<span class="string">"g"</span>);</span><br><span class="line">        <span class="keyword">this</span>.score.style.top = <span class="number">10</span>*size+<span class="string">"px"</span>;</span><br><span class="line">        <span class="keyword">this</span>.score.style.left = (col+<span class="number">1</span>)*size+<span class="string">"px"</span>;</span><br><span class="line">        <span class="keyword">this</span>.score.style.backgroundColor = <span class="string">"rgb(0,0,0)"</span></span><br><span class="line">        <span class="keyword">this</span>.score.innerHTML = <span class="string">"score：0"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>存放容器实例对象 container</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.container = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure></li>
-<li><p>对方块x、y、shape、container进行设置 refresh()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对x、y、shape、container进行操作</span></span><br><span class="line"><span class="keyword">this</span>.refresh = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 保证方块能够居中</span></span><br><span class="line">    <span class="keyword">this</span>.x = (<span class="keyword">typeof</span>(x)!=<span class="string">'undefined'</span>)?x:<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">this</span>.y = (<span class="keyword">typeof</span>(y)!=<span class="string">'undefined'</span>)?y:<span class="number">0</span>;</span><br><span class="line">    <span class="comment">// x、y分别为方块以左上角的水平、垂直距离</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 判断是否有传递参数</span></span><br><span class="line">    <span class="comment">// 除第一次外，都会有预告中的模型</span></span><br><span class="line">    <span class="keyword">if</span> (shape) &#123;<span class="keyword">this</span>.shape = shape;&#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.shape2)&#123;<span class="keyword">this</span>.shape = <span class="keyword">this</span>.shape2&#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;<span class="keyword">this</span>.shape = shape?shape:shapes[<span class="built_in">Math</span>.floor((<span class="built_in">Math</span>.random()*shapes.length<span class="number">-0.000000001</span>))].split(<span class="string">","</span>);&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 预告中的模型</span></span><br><span class="line">    <span class="keyword">this</span>.shape2 = shapes[<span class="built_in">Math</span>.floor((<span class="built_in">Math</span>.random()*shapes.length<span class="number">-0.000000001</span>))].split(<span class="string">","</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.container &amp;&amp; !<span class="keyword">this</span>.container.check(<span class="keyword">this</span>.x,<span class="keyword">this</span>.y,<span class="keyword">this</span>.shape)) &#123;</span><br><span class="line">        isOver = <span class="literal">true</span>;</span><br><span class="line">        alert(<span class="string">"游戏结束"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.show();</span><br><span class="line">        <span class="keyword">this</span>.showScore();</span><br><span class="line">        <span class="keyword">this</span>.showAnnouncement();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>显示方块 show()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显示方块</span></span><br><span class="line"><span class="keyword">this</span>.show = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// javascript:for in总是得到对像的key或数组,字符串的下标</span></span><br><span class="line">    <span class="comment">// python:得到元素的值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> i <span class="keyword">in</span> <span class="keyword">this</span>.divs) &#123;</span><br><span class="line">        <span class="keyword">this</span>.divs[i].style.top = (<span class="keyword">this</span>.shape[i*<span class="number">2</span>+<span class="number">1</span>]- -<span class="keyword">this</span>.y)*size+<span class="string">"px"</span>;</span><br><span class="line">        <span class="keyword">this</span>.divs[i].style.left = (<span class="keyword">this</span>.shape[i*<span class="number">2</span>]- -<span class="keyword">this</span>.x)*size+<span class="string">"px"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>方块水平移动 hMove()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 水平移动方块的位置</span></span><br><span class="line"><span class="keyword">this</span>.hMove = <span class="function"><span class="keyword">function</span> (<span class="params">step</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.container.check(<span class="keyword">this</span>.x- -step,<span class="keyword">this</span>.y,<span class="keyword">this</span>.shape)) &#123;</span><br><span class="line">        <span class="keyword">this</span>.x += step;</span><br><span class="line">        <span class="keyword">this</span>.show()            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>方块向下移动 vMove()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 垂直移动方块位置</span></span><br><span class="line"><span class="keyword">this</span>.vMove = <span class="function"><span class="keyword">function</span> (<span class="params">step</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.container.check(<span class="keyword">this</span>.x,<span class="keyword">this</span>.y- -step,<span class="keyword">this</span>.shape)) &#123;</span><br><span class="line">       <span class="keyword">this</span>.y +=step;</span><br><span class="line">       <span class="keyword">this</span>.show();             </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.container.fixShape(<span class="keyword">this</span>.x,<span class="keyword">this</span>.y,<span class="keyword">this</span>.shape);</span><br><span class="line">        <span class="keyword">this</span>.container.findFull();</span><br><span class="line">        <span class="keyword">this</span>.refresh();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>旋转方块 rotate()<br>当点击”↑”时，模型旋转</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旋转方块</span></span><br><span class="line"><span class="keyword">this</span>.rotate = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newShape = [<span class="keyword">this</span>.shape[<span class="number">1</span>],<span class="number">3</span>-<span class="keyword">this</span>.shape[<span class="number">0</span>],<span class="keyword">this</span>.shape[<span class="number">3</span>],<span class="number">3</span>-<span class="keyword">this</span>.shape[<span class="number">2</span>],<span class="keyword">this</span>.shape[<span class="number">5</span>],<span class="number">3</span>-<span class="keyword">this</span>.shape[<span class="number">4</span>],<span class="keyword">this</span>.shape[<span class="number">7</span>],<span class="number">3</span>-<span class="keyword">this</span>.shape[<span class="number">6</span>]];</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.container.check(<span class="keyword">this</span>.x,<span class="keyword">this</span>.y,newShape)) &#123;</span><br><span class="line">       <span class="keyword">this</span>.shape = newShape;</span><br><span class="line">       <span class="keyword">this</span>.show();             </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>显示分数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显示分数</span></span><br><span class="line">   <span class="keyword">this</span>.showScore = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="keyword">this</span>.container &amp;&amp; <span class="keyword">this</span>.score)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">this</span>.score.innerHTML = <span class="string">"score："</span>+<span class="keyword">this</span>.container.score;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>显示预告</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显示预告</span></span><br><span class="line">    <span class="keyword">this</span>.showAnnouncement = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> i <span class="keyword">in</span> <span class="keyword">this</span>.divs2) &#123;</span><br><span class="line">            <span class="keyword">this</span>.divs2[i].style.top = (<span class="keyword">this</span>.shape2[i*<span class="number">2</span>+<span class="number">1</span>]- <span class="number">-1</span>)*size+<span class="string">"px"</span>;</span><br><span class="line">            <span class="keyword">this</span>.divs2[i].style.left = (<span class="keyword">this</span>.shape2[i*<span class="number">2</span>]- <span class="number">-1</span>- -col)*size+<span class="string">"px"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="5">
-<li>编写一个Container类来记录容器的属性和方法</li>
-</ol>
-<ul>
-<li><p>容器初始化 init()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 容器(画布)初始化</span></span><br><span class="line">    <span class="keyword">this</span>.init = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 绘制方块所在区域(画布的大小)</span></span><br><span class="line">        <span class="keyword">var</span> bgDiv = createElm(<span class="string">"div"</span>,<span class="string">"f"</span>);</span><br><span class="line">        bgDiv.style.width = size*col+<span class="string">"px"</span>;</span><br><span class="line">        bgDiv.style.height = size*row+<span class="string">"px"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绘制预告所在区域</span></span><br><span class="line">        <span class="keyword">var</span> bgDiv = createElm(<span class="string">"div"</span>,<span class="string">"e"</span>);</span><br><span class="line">        bgDiv.style.left = size*col+<span class="string">"px"</span>;</span><br><span class="line">        bgDiv.style.width = size*announcement+<span class="string">"px"</span>;</span><br><span class="line">        bgDiv.style.height = size*row+<span class="string">"px"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 积分初始化</span></span><br><span class="line">        <span class="keyword">this</span>.score = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>碰撞检测 check()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 容器边界</span></span><br><span class="line">    <span class="keyword">this</span>.check = <span class="function"><span class="keyword">function</span>(<span class="params">x,y,shape</span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 检查边界越界</span></span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">var</span> leftmost = col;</span><br><span class="line">        <span class="keyword">var</span> rightmost = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> undermost = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i+=<span class="number">2</span>) &#123;</span><br><span class="line">            <span class="comment">// 记录最左边水平坐标</span></span><br><span class="line">            <span class="keyword">if</span> (shape[i]&lt;leftmost) &#123;</span><br><span class="line">                leftmost = shape[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 记录最右边水平坐标</span></span><br><span class="line">            <span class="keyword">if</span> (shape[i]&gt;rightmost) &#123;</span><br><span class="line">                rightmost = shape[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 记录最下边垂直坐标</span></span><br><span class="line">            <span class="keyword">if</span> (shape[i+<span class="number">1</span>]&gt;undermost) &#123;</span><br><span class="line">                undermost = shape[i+<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 判断是否碰撞 ???????</span></span><br><span class="line">            <span class="comment">// (shape[i+1]- -y)*100- -(shape[i]- -x)返回的结果为X1 0 X2,X1为行数，X2为列数</span></span><br><span class="line">            <span class="comment">// *100是为了用0隔开2个数</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>[(shape[i+<span class="number">1</span>]- -y)*<span class="number">100</span>- -(shape[i]- -x)]) &#123;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 判断是否到达极限高度</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> m = <span class="number">0</span>; m &lt; <span class="number">3</span>; m++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; col; n++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>[m*<span class="number">100</span>+n]) &#123;</span><br><span class="line">                    flag = <span class="literal">true</span>;</span><br><span class="line">                &#125;    </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ( (rightmost- -x+<span class="number">1</span>)&gt;col || (leftmost- -x)&lt;<span class="number">0</span> || (undermost- -y+<span class="number">1</span>)&gt;row || flag)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>记录已经结束的模型 fixShape()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用灰色方块替换红色方块，并在容器中记录灰色方块的位置</span></span><br><span class="line"><span class="keyword">this</span>.fixShape = <span class="function"><span class="keyword">function</span> (<span class="params">x,y,shape</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> t = <span class="keyword">new</span> Tetris(<span class="string">"d"</span>,x,y,shape);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i+=<span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>[(shape[i+<span class="number">1</span>]- -y)*<span class="number">100</span>- -(shape[i]- -x)] = t.divs[i/<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>判断是否可以消除 findFull()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历整个容器，判断是否可以消除</span></span><br><span class="line">    <span class="keyword">this</span>.findFull = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// s:记录消除的行数</span></span><br><span class="line">        <span class="keyword">var</span> s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> m = <span class="number">0</span>; m &lt; row; m++) &#123;</span><br><span class="line">            <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> n=<span class="number">0</span>;n&lt;col;n++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="keyword">this</span>[m*<span class="number">100</span>+n])&#123;count++;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(count==col)&#123;s++;<span class="keyword">this</span>.removeLine(m);&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.score -= -<span class="keyword">this</span>.calScore(s)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>计算成绩 calScore()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.calScore = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s!=<span class="number">0</span>) <span class="keyword">return</span> s- -<span class="keyword">this</span>.calScore(s<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>消除指定一行方块 removeLine</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 消除指定一行方块</span></span><br><span class="line"><span class="keyword">this</span>.removeLine = <span class="function"><span class="keyword">function</span>(<span class="params">row</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 移除一行方块</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; col; n++) &#123;</span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(<span class="keyword">this</span>[row*<span class="number">100</span>+n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 把所消除行上面所有的方块下移一行</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = row;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</span><br><span class="line">            <span class="keyword">this</span>[i*<span class="number">100</span>- -j] = <span class="keyword">this</span>[(i<span class="number">-1</span>)*<span class="number">100</span>- -j]</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>[i*<span class="number">100</span>- -j])&#123;<span class="keyword">this</span>[i*<span class="number">100</span>- -j].style.top = i*size + <span class="string">"px"</span>;&#125;   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="6">
-<li>主程序运行<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主程序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建一个container的类实例</span></span><br><span class="line">    container = <span class="keyword">new</span> Container();</span><br><span class="line">    <span class="comment">// 调用init()方法</span></span><br><span class="line">    container.init();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建tetris的类实例</span></span><br><span class="line">    tetris = <span class="keyword">new</span> Tetris();</span><br><span class="line">    <span class="comment">// 调用tetris对象的container方法</span></span><br><span class="line">    tetris.container = container;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.onkeydown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isOver) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">// 主流浏览器中：事件对象可以在事件的回调函数中通过参数传入，常规写法是简写为e。</span></span><br><span class="line">        <span class="comment">// 低版本IE浏览器中：事件对象通过window对象中获取，要取得事件对象，即window.event。</span></span><br><span class="line">        <span class="keyword">var</span> e = <span class="built_in">window</span>.event?<span class="built_in">window</span>.event:e;</span><br><span class="line">        <span class="keyword">switch</span> (e.keyCode) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">38</span>: <span class="comment">//up</span></span><br><span class="line">                tetris.rotate()</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">40</span>: <span class="comment">//down</span></span><br><span class="line">                tetris.vMove(<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">37</span>: <span class="comment">//left</span></span><br><span class="line">                tetris.hMove(<span class="number">-1</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">39</span>: <span class="comment">//right</span></span><br><span class="line">                tetris.hMove(<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">if</span> (!isOver) &#123;tetris.vMove(<span class="number">1</span>)&#125;&#125;,<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>项目展示：<a href="https://1454667397.github.io/hello_world/" target="_blank" rel="noopener">俄罗斯方块</a><br>源码：<a href="https://github.com/1454667397/hello_world" target="_blank" rel="noopener">俄罗斯方块</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/07/tetris/" data-id="ck565qc080003e4tu6iz61xqk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
